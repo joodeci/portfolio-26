@@ -31,7 +31,7 @@ export default function AboutSection() {
               lineHeight: 1.2,
             }}
           >
-            Designing at the intersection of logic and craft
+            Human being, designer, & occasional American R&B quartet
           </h2>
 
           <div
@@ -45,20 +45,17 @@ export default function AboutSection() {
             }}
           >
             <p>
-              I&apos;m a Senior UX/UI Designer with over 10 years of experience helping 
-              companies build digital products that people actually want to use. 
-              My career has been shaped by three industries: e-commerce, finance, 
-              and graphic design — each teaching me to balance aesthetic sensibility 
-              with rigorous systems thinking.
+              I&apos;m a Senior UX/UI Designer with 10 years of experience creating thoughtful products that make a difference. 
+              My work combines a background in graphic design, e-commerce, finance; over time learning to balance aestheics and user focused design thinking.
             </p>
+
             <p>
-              I believe great design is invisible. When it works, you don&apos;t notice it — 
-              you simply feel clarity, ease, and confidence. That&apos;s the experience 
+              I believe in technology and design as a means to connect and shape how humans around the world are seen, heard, and felt.
+              Great design can help people feel clarity, ease, and confidence. My ethos in life is to always improve and leave things better than the way I found them. That&apos;s the experience 
               I design towards.
             </p>
             <p>
-              Currently based in Vancouver, BC. Open to full-time roles, contract 
-              work, and select consulting engagements.
+              Outside of work, I'm a traveller, casual photographer, collector of vinyl records and self proclaimed <a href="https://letterboxd.com/jodeci/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>movie buff</a>.
             </p>
           </div>
 
@@ -81,20 +78,11 @@ export default function AboutSection() {
                   fontSize: '0.65rem',
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
-                  color: 'var(--text-muted)',
+                  color: 'var(--text-secondary)',
                   marginBottom: '2px',
                 }}
               >
-                Current Position
-              </p>
-              <p
-                style={{
-                  fontSize: '0.9rem',
-                  color: 'var(--text-primary)',
-                  fontWeight: 500,
-                }}
-              >
-                Senior UX/UI Designer — Your Company
+                Currently exploring new opportunities
               </p>
             </div>
           </div>

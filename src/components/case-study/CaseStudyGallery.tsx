@@ -13,6 +13,9 @@ export default function CaseStudyGallery({ images }: { images: GalleryImage[] })
 
   if (!images || images.length === 0) return null;
 
+  const isMulti = images.length > 1;
+  const isOdd = images.length % 2 !== 0;
+
   return (
     <section
       style={{
@@ -29,15 +32,16 @@ export default function CaseStudyGallery({ images }: { images: GalleryImage[] })
         <div className="divider" />
 
         <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: images.length === 1 ? '1fr' : 'repeat(auto-fill, minmax(480px, 1fr))',
-            gap: '1.5rem',
-            marginTop: '2rem',
-          }}
+          className={isMulti ? 'cs-gallery-grid' : 'cs-gallery-single'}
+          style={{ marginTop: '2rem' }}
         >
-          {images.map((image, index) => (
-            <figure key={index} style={{ margin: 0 }}>
+          {images.map((image, index) => {
+            const isLastOdd = isMulti && isOdd && index === images.length - 1;
+            return (
+            <figure
+              key={index}
+              style={{ margin: 0, ...(isLastOdd ? { gridColumn: '1 / -1' } : {}) }}
+            >
               <div
                 style={{
                   borderRadius: '3px',
@@ -73,7 +77,8 @@ export default function CaseStudyGallery({ images }: { images: GalleryImage[] })
                 </figcaption>
               )}
             </figure>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

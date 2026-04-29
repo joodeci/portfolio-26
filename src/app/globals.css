@@ -136,6 +136,18 @@ img {
   gap: 3rem;
 }
 
+.cs-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.cs-gallery-single {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
 @media (min-width: 768px) {
   .cs-two-col {
     grid-template-columns: 1fr 1fr;
@@ -145,5 +157,10 @@ img {
   .cs-two-col-wide {
     grid-template-columns: 1.4fr 1fr;
     gap: 4rem;
+  }
+
+  .cs-gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
 }

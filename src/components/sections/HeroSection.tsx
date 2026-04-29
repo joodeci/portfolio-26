@@ -172,8 +172,8 @@ export default function HeroSection() {
           }}
         >
           I&apos;ve spent the last <strong style={{ color: 'var(--text-primary)', fontWeight: 500 }}>10 years</strong> designing 
-          digital experiences that balance clarity with craft. My work spans e-commerce platforms, 
-          financial tools, and brand identity — always rooted in empathy, systems thinking, 
+          digital experiences that balance clarity with aesthetics. Specializing in e-commerce platforms, financial tools,
+          and graphic design. Taking ambiguous challenges and turning them into meaningful solutions — rooted in human focused designs 
           and a commitment to purposeful simplicity.
         </p>
 
@@ -190,9 +190,8 @@ export default function HeroSection() {
           }}
         >
           {[
-            { number: '10+', label: 'Years of Experience' },
-            { number: '40+', label: 'Projects Shipped' },
-            { number: '3', label: 'Industry Specialisms' },
+            { number: '~10', label: 'Years of Experience' },
+            { number: '50+', label: 'Projects Shipped' },
           ].map((stat) => (
             <div key={stat.label}>
               <p

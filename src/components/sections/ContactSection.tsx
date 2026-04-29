@@ -66,18 +66,15 @@ export default function ContactSection() {
               }}
             >
               <div>
-                <p style={{ fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '3px' }}>
+                <p style={{ fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-primary)' }}>
                   Email
-                </p>
-                <p style={{ fontSize: '0.95rem', color: 'var(--text-primary)' }}>
-                  your@email.com
                 </p>
               </div>
               <span style={{ color: 'var(--accent)', fontSize: '1.2rem' }}>→</span>
             </a>
 
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/jodecic/"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -102,11 +99,8 @@ export default function ContactSection() {
               }}
             >
               <div>
-                <p style={{ fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '3px' }}>
+                <p style={{ fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-primary)' }}>
                   LinkedIn
-                </p>
-                <p style={{ fontSize: '0.95rem' }}>
-                  linkedin.com/in/yourprofile
                 </p>
               </div>
               <span style={{ color: 'var(--accent)', fontSize: '1.2rem' }}>→</span>
