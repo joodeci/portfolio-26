@@ -11,6 +11,7 @@ import CustomContent from '@/components/case-study/CustomContent';
 import LightboxProvider from '@/components/case-study/LightboxProvider';
 import { getCaseStudyBySlug, getAllCaseStudySlugs } from '@/lib/queries';
 import { urlFor } from '@/lib/sanity';
+import { draftMode } from 'next/headers';
 import Link from 'next/link';
 
 import type { PortableTextBlock } from '@portabletext/types';
@@ -142,10 +143,11 @@ export default async function CaseStudyPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const { isEnabled: isPreview } = await draftMode();
   let caseStudy: CaseStudyData | null = null;
 
   try {
-    caseStudy = await getCaseStudyBySlug(slug);
+    caseStudy = await getCaseStudyBySlug(slug, isPreview);
   } catch {
     // Sanity not connected yet
   }

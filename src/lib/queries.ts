@@ -1,7 +1,7 @@
-import { client } from './sanity';
+import { client, getClient } from './sanity';
 
 // Fetch all case studies for the Work section grid
-export async function getCaseStudies() {
+export async function getCaseStudies(usePreview = false) {
   const query = `*[_type == "caseStudy"] | order(publishedAt desc) {
     _id,
     title,
@@ -14,11 +14,11 @@ export async function getCaseStudies() {
     publishedAt
   }`;
 
-  return await client.fetch(query);
+  return await getClient(usePreview).fetch(query);
 }
 
 // Fetch a single case study by slug (for the case study page)
-export async function getCaseStudyBySlug(slug: string) {
+export async function getCaseStudyBySlug(slug: string, usePreview = false) {
   // Normalise: strip any accidental leading slash so "/subscription" and "subscription" both match
   const normalizedSlug = slug.startsWith('/') ? slug.slice(1) : slug;
   const query = `*[_type == "caseStudy" && (slug.current == $slug || slug.current == "/" + $slug)][0] {
@@ -73,7 +73,7 @@ export async function getCaseStudyBySlug(slug: string) {
     }
   }`;
 
-  return await client.fetch(query, { slug: normalizedSlug });
+  return await getClient(usePreview).fetch(query, { slug: normalizedSlug });
 }
 
 // Get all slugs — used by Next.js to know which pages to generate

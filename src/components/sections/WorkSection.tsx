@@ -2,14 +2,14 @@ import WorkCard from '@/components/ui/WorkCard';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import { getCaseStudies } from '@/lib/queries';
 import { urlFor } from '@/lib/sanity';
+import { draftMode } from 'next/headers';
 
 export default async function WorkSection() {
-  // This fetches case studies from Sanity CMS
-  // If Sanity isn't set up yet, it will show placeholder cards
+  const { isEnabled: isPreview } = await draftMode();
   let caseStudies: any[] = [];
 
   try {
-    caseStudies = await getCaseStudies();
+    caseStudies = await getCaseStudies(isPreview);
   } catch (e) {
     console.log('Sanity not connected yet — showing placeholder data');
   }
