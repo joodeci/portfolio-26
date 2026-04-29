@@ -2,10 +2,11 @@
 
 import { PortableText } from '@portabletext/react';
 import type { PortableTextComponents } from '@portabletext/react';
+import type { PortableTextBlock } from '@portabletext/types';
 import { urlFor } from '@/lib/sanity';
 import { useLightbox } from './LightboxProvider';
 
-export default function RichTextSection({ value }: { value: any[] }) {
+export default function RichTextSection({ value }: { value: PortableTextBlock[] }) {
   const { openByUrl } = useLightbox();
 
   const components: PortableTextComponents = {
@@ -54,7 +55,7 @@ export default function RichTextSection({ value }: { value: any[] }) {
       ),
     },
     types: {
-      image: ({ value: img }: any) => {
+      image: ({ value: img }: { value: { asset?: { _ref?: string }; alt?: string; caption?: string } }) => {
         if (!img?.asset) return null;
         const src = urlFor(img).width(1600).url();
         return (

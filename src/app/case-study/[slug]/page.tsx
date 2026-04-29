@@ -13,16 +13,49 @@ import { getCaseStudyBySlug, getAllCaseStudySlugs } from '@/lib/queries';
 import { urlFor } from '@/lib/sanity';
 import Link from 'next/link';
 
+import type { PortableTextBlock } from '@portabletext/types';
+
+type SanitySlugItem = { slug: { current: string } };
+type GalleryImage = { asset?: { asset?: { _ref?: string } }; caption?: string; alt?: string };
+type CaseStudySection = {
+  _type: string;
+  _key: string;
+  contentType?: string | null;
+  richText?: PortableTextBlock[] | null;
+  myRole?: string | null;
+  team?: string[] | null;
+  duration?: string | null;
+  tools?: string[] | null;
+  images?: GalleryImage[];
+  steps?: Array<{ phase: string; description: string; activities?: string[] | null }> | null;
+  solutionDescription?: string | null;
+  metrics?: Array<{ value: string; label: string }> | null;
+  takeaways?: Array<{ title: string; description: string }> | null;
+  problem?: string | null;
+  constraints?: string[] | null;
+  goals?: string[] | null;
+  heading?: string | null;
+};
+type CaseStudyData = {
+  title: string;
+  shortDescription?: string;
+  category?: string;
+  year?: string;
+  client?: string;
+  coverImage?: Record<string, unknown>;
+  sections?: CaseStudySection[];
+};
+
 export async function generateStaticParams() {
   try {
     const slugs = await getAllCaseStudySlugs();
-    return slugs.map((item: any) => ({ slug: item.slug.current }));
+    return slugs.map((item: SanitySlugItem) => ({ slug: item.slug.current }));
   } catch {
     return [];
   }
 }
 
-function renderSection(section: any) {
+function renderSection(section: CaseStudySection) {
   switch (section._type) {
     case 'roleAndTeamSection':
       return (
@@ -109,7 +142,7 @@ export default async function CaseStudyPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  let caseStudy: any = null;
+  let caseStudy: CaseStudyData | null = null;
 
   try {
     caseStudy = await getCaseStudyBySlug(slug);
@@ -176,9 +209,9 @@ export default async function CaseStudyPage({
         <main>
           <CaseStudyHeader
             title={caseStudy.title}
-            shortDescription={caseStudy.shortDescription}
-            category={caseStudy.category}
-            year={caseStudy.year}
+            shortDescription={caseStudy.shortDescription ?? ''}
+            category={caseStudy.category ?? ''}
+            year={caseStudy.year ?? ''}
             client={caseStudy.client}
             coverImage={coverImageUrl}
           />

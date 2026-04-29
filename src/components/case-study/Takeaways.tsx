@@ -1,3 +1,4 @@
+import type { PortableTextBlock } from '@portabletext/types';
 import RichTextSection from './RichTextSection';
 
 interface Takeaway {
@@ -7,7 +8,7 @@ interface Takeaway {
 
 interface TakeawaysProps {
   contentType?: string | null;
-  richText?: any[] | null;
+  richText?: PortableTextBlock[] | null;
   takeaways?: Takeaway[] | null;
 }
 

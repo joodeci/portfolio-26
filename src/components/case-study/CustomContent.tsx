@@ -1,8 +1,9 @@
+import type { PortableTextBlock } from '@portabletext/types';
 import RichTextSection from './RichTextSection';
 
 interface CustomContentProps {
   heading?: string | null;
-  richText?: any[] | null;
+  richText?: PortableTextBlock[] | null;
 }
 
 export default function CustomContent({ heading, richText }: CustomContentProps) {

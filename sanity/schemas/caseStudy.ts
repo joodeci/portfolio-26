@@ -155,7 +155,7 @@ export default defineType({
               type: 'text',
               rows: 5,
               description: 'Describe the main problem this project solved',
-              hidden: ({ parent }: any) => parent?.contentType === 'richText',
+              hidden: ({ parent }: { parent: Record<string, unknown> }) => parent?.contentType === 'richText',
             }),
             defineField({
               name: 'constraints',
@@ -163,7 +163,7 @@ export default defineType({
               type: 'array',
               of: [{ type: 'string' }],
               description: 'Key constraints you worked within',
-              hidden: ({ parent }: any) => parent?.contentType === 'richText',
+              hidden: ({ parent }: { parent: Record<string, unknown> }) => parent?.contentType === 'richText',
             }),
             defineField({
               name: 'goals',
@@ -171,7 +171,7 @@ export default defineType({
               type: 'array',
               of: [{ type: 'string' }],
               description: 'What were you trying to achieve? List 3–5 goals.',
-              hidden: ({ parent }: any) => parent?.contentType === 'richText',
+              hidden: ({ parent }: { parent: Record<string, unknown> }) => parent?.contentType === 'richText',
             }),
             // Rich text field
             defineField({
@@ -179,7 +179,7 @@ export default defineType({
               title: 'Content',
               type: 'blockContent',
               description: 'Write freely — paste your text, add headings, bullets, and bold.',
-              hidden: ({ parent }: any) => parent?.contentType !== 'richText',
+              hidden: ({ parent }: { parent: Record<string, unknown> }) => parent?.contentType !== 'richText',
             }),
           ],
           preview: {
@@ -260,7 +260,7 @@ export default defineType({
                   },
                 },
               ],
-              hidden: ({ parent }: any) => parent?.contentType === 'richText',
+              hidden: ({ parent }: { parent: Record<string, unknown> }) => parent?.contentType === 'richText',
             }),
             // Rich text field
             defineField({
@@ -268,7 +268,7 @@ export default defineType({
               title: 'Content',
               type: 'blockContent',
               description: 'Describe your process — paste your text, add headings and bullets.',
-              hidden: ({ parent }: any) => parent?.contentType !== 'richText',
+              hidden: ({ parent }: { parent: Record<string, unknown> }) => parent?.contentType !== 'richText',
             }),
           ],
           preview: {
@@ -306,7 +306,7 @@ export default defineType({
               title: 'Solution Description',
               type: 'text',
               rows: 6,
-              hidden: ({ parent }: any) => parent?.contentType === 'richText',
+              hidden: ({ parent }: { parent: Record<string, unknown> }) => parent?.contentType === 'richText',
             }),
             // Rich text field
             defineField({
@@ -314,7 +314,7 @@ export default defineType({
               title: 'Content',
               type: 'blockContent',
               description: 'Describe the solution — paste your text, add headings and bullets.',
-              hidden: ({ parent }: any) => parent?.contentType !== 'richText',
+              hidden: ({ parent }: { parent: Record<string, unknown> }) => parent?.contentType !== 'richText',
             }),
             // Metrics are available in both modes
             defineField({
@@ -413,7 +413,7 @@ export default defineType({
                   },
                 },
               ],
-              hidden: ({ parent }: any) => parent?.contentType === 'richText',
+              hidden: ({ parent }: { parent: Record<string, unknown> }) => parent?.contentType === 'richText',
             }),
             // Rich text field
             defineField({
@@ -421,7 +421,7 @@ export default defineType({
               title: 'Content',
               type: 'blockContent',
               description: 'Write your reflections — paste your text, add headings and bullets.',
-              hidden: ({ parent }: any) => parent?.contentType !== 'richText',
+              hidden: ({ parent }: { parent: Record<string, unknown> }) => parent?.contentType !== 'richText',
             }),
           ],
           preview: {

@@ -1,3 +1,4 @@
+import type { PortableTextBlock } from '@portabletext/types';
 import RichTextSection from './RichTextSection';
 
 interface ProcessStep {
@@ -8,7 +9,7 @@ interface ProcessStep {
 
 interface ProcessSectionProps {
   contentType?: string | null;
-  richText?: any[] | null;
+  richText?: PortableTextBlock[] | null;
   steps?: ProcessStep[] | null;
 }
 

@@ -1,5 +1,6 @@
 import { createClient } from '@sanity/client';
 import { createImageUrlBuilder } from '@sanity/image-url';
+import type { SanityImageSource } from '@sanity/image-url';
 
 export const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'your-project-id',
@@ -10,7 +11,6 @@ export const client = createClient({
 
 const builder = createImageUrlBuilder(client);
 
-// This function converts Sanity image references into usable URLs
-export function urlFor(source: any) {
+export function urlFor(source: SanityImageSource) {
   return builder.image(source);
 }

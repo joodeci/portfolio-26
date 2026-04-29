@@ -1,3 +1,4 @@
+import type { PortableTextBlock } from '@portabletext/types';
 import RichTextSection from './RichTextSection';
 
 interface Metric {
@@ -7,7 +8,7 @@ interface Metric {
 
 interface SolutionsSectionProps {
   contentType?: string | null;
-  richText?: any[] | null;
+  richText?: PortableTextBlock[] | null;
   solutionDescription?: string | null;
   metrics?: Metric[] | null;
 }

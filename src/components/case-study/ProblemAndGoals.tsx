@@ -1,8 +1,9 @@
+import type { PortableTextBlock } from '@portabletext/types';
 import RichTextSection from './RichTextSection';
 
 interface ProblemAndGoalsProps {
   contentType?: string | null;
-  richText?: any[] | null;
+  richText?: PortableTextBlock[] | null;
   problem?: string | null;
   constraints?: string[] | null;
   goals?: string[] | null;
