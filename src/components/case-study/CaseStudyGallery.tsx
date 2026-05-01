@@ -66,7 +66,7 @@ export default function CaseStudyGallery({ images }: { images: GalleryImage[] })
                   style={{
                     marginTop: '0.75rem',
                     fontSize: '0.8rem',
-                    color: 'var(--text-muted)',
+                    color: 'var(--text-secondary)',
                     lineHeight: 1.6,
                     fontStyle: 'italic',
                     paddingLeft: '0.75rem',

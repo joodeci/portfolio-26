@@ -108,7 +108,7 @@ export default function WorkCard({
               fontSize: '0.65rem',
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
-              color: 'var(--accent)',
+              color: 'var(--text-secondary)',
               fontWeight: 500,
             }}
           >
@@ -148,7 +148,7 @@ export default function WorkCard({
             <span
               style={{
                 fontSize: '0.75rem',
-                color: 'var(--text-muted)',
+                color: 'var(--text-secondary)',
                 flexShrink: 0,
                 marginTop: '2px',
               }}
@@ -181,7 +181,7 @@ export default function WorkCard({
                     fontSize: '0.65rem',
                     letterSpacing: '0.08em',
                     textTransform: 'uppercase',
-                    color: 'var(--text-muted)',
+                    color: 'var(--text-secondary)',
                     border: '1px solid var(--border-light)',
                     borderRadius: '2px',
                     padding: '3px 8px',

@@ -80,7 +80,7 @@ export default function RichTextSection({ value }: { value: PortableTextBlock[] 
               <figcaption
                 style={{
                   fontSize: '0.8rem',
-                  color: 'var(--text-muted)',
+                  color: 'var(--text-secondary)',
                   textAlign: 'center',
                   marginTop: '0.5rem',
                   letterSpacing: '0.04em',
@@ -106,7 +106,7 @@ export default function RichTextSection({ value }: { value: PortableTextBlock[] 
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            color: 'var(--accent)',
+            color: 'var(--text-secondary)',
             textDecoration: 'underline',
             textUnderlineOffset: '3px',
           }}

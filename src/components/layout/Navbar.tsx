@@ -139,7 +139,7 @@ export default function Navbar() {
             listStyle: 'none',
             alignItems: 'center',
           }}
-          className="hidden md:flex"
+          className="nav-desktop-links"
         >
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -184,15 +184,15 @@ export default function Navbar() {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           style={{
-            display: 'none',
             flexDirection: 'column',
             gap: '5px',
             background: 'none',
             border: 'none',
             cursor: 'pointer',
-            padding: '4px',
+            padding: '11px',
+            margin: '-11px',
           }}
-          className="flex md:hidden flex-col"
+          className="nav-mobile-btn"
           aria-label="Toggle menu"
         >
           {[0, 1, 2].map((i) => (

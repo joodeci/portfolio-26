@@ -148,6 +148,23 @@ img {
   gap: 1.5rem;
 }
 
+/* ─── Navbar responsive visibility ──────────────────────── */
+@media (max-width: 767px) {
+  .nav-desktop-links {
+    display: none !important;
+  }
+}
+
+.nav-mobile-btn {
+  display: flex !important;
+}
+
+@media (min-width: 768px) {
+  .nav-mobile-btn {
+    display: none !important;
+  }
+}
+
 @media (min-width: 768px) {
   .cs-two-col {
     grid-template-columns: 1fr 1fr;
